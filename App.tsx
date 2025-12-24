@@ -58,7 +58,7 @@ const App: React.FC = () => {
             <div className="absolute inset-0 bg-violet-500 blur-[80px] opacity-20 animate-pulse"></div>
             <div className="relative w-full h-full rounded-3xl overflow-hidden border-2 border-white/10 accent-glow bg-zinc-900">
               <img 
-                src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=1000&auto=format&fit=crop" 
+                src="https://github.com/ephraimemad/Epharim/blob/main/profile.jpg" 
                 alt="Ephraim Emad" 
                 className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
               />
