@@ -7,19 +7,17 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
       body {
         font-family: 'Outfit', sans-serif;
         background-color: #050505;
         color: white;
         scroll-behavior: smooth;
-      }
-      .font-display {
-        font-family: 'Outfit', sans-serif;
+        -webkit-font-smoothing: antialiased;
       }
       .accent-glow {
-        box-shadow: 0 0 30px rgba(139, 92, 246, 0.1);
+        box-shadow: 0 0 50px rgba(139, 92, 246, 0.15);
       }
       .gradient-text {
         background: linear-gradient(135deg, #fff 0%, #c4b5fd 100%);
@@ -28,16 +26,32 @@
       }
       .profile-frame {
         position: relative;
-        display: inline-block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 9999px;
+      }
+      .profile-frame::before {
+        content: '';
+        position: absolute;
+        inset: -4px;
+        background: linear-gradient(135deg, #8b5cf6, #d8b4fe);
+        border-radius: 9999px;
+        z-index: -1;
+        opacity: 0.4;
       }
       .profile-frame::after {
         content: '';
         position: absolute;
-        inset: -2px;
-        background: linear-gradient(135deg, #8b5cf6, #d8b4fe);
+        inset: -12px;
+        background: radial-gradient(circle, rgba(139, 92, 246, 0.2) 0%, transparent 70%);
         border-radius: 9999px;
-        z-index: -1;
-        opacity: 0.3;
+        z-index: -2;
+        animation: pulse-slow 4s infinite alternate ease-in-out;
+      }
+      @keyframes pulse-slow {
+        0% { transform: scale(0.95); opacity: 0.3; }
+        100% { transform: scale(1.05); opacity: 0.6; }
       }
     </style>
     <script type="importmap">

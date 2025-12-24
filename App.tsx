@@ -1,6 +1,6 @@
 import React from 'react';
-import { Github, Linkedin, Youtube, Mail, Sparkles, ArrowRight, MessageSquare, Terminal, Layout } from 'lucide-react';
-import { SERVICES, PROJECTS, CONTENT_STRATEGIES } from './constants.tsx';
+import { Github, Linkedin, Mail, Sparkles, Terminal, Layout, Code2, Cpu } from 'lucide-react';
+import { SERVICES, PROJECTS } from './constants.tsx';
 import SectionHeader from './components/SectionHeader.tsx';
 import ContactForm from './components/ContactForm.tsx';
 
@@ -9,102 +9,97 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-[#050505] text-white selection:bg-violet-500 selection:text-white">
-      {/* Header */}
+      {/* Navigation */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-white/5">
-        <div className="max-w-5xl mx-auto px-6 h-20 flex items-center justify-between">
-          <span className="text-xl font-bold tracking-tight">
+        <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+          <span className="text-xl font-black tracking-tighter">
             EPHRAIM <span className="text-violet-400">EMAD</span>
           </span>
-          <nav className="hidden md:flex gap-8 text-sm font-semibold text-gray-400">
+          <nav className="hidden md:flex gap-10 text-[13px] font-bold uppercase tracking-widest text-gray-400">
             <a href="#services" className="hover:text-white transition-colors">Services</a>
             <a href="#projects" className="hover:text-white transition-colors">Projects</a>
-            <a href="#contact" className="bg-violet-500/10 text-violet-400 px-5 py-2 rounded-full border border-violet-500/20 hover:bg-violet-500 hover:text-white transition-all">Say Hi!</a>
+            <a href="#contact" className="bg-white/5 text-white px-6 py-2.5 rounded-full border border-white/10 hover:bg-violet-600 hover:border-violet-600 transition-all">Let's Talk</a>
           </nav>
         </div>
       </header>
 
       {/* Hero Section */}
-      <section className="relative pt-40 pb-24 px-6">
-        <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10">
-          <div className="flex-1 space-y-6 text-center md:text-left">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-violet-500/10 border border-violet-500/20 text-violet-400 text-xs font-bold uppercase tracking-widest">
-              <Sparkles size={14} /> Open for collaboration
+      <section className="relative pt-48 pb-32 px-6 overflow-hidden">
+        {/* Abstract Glow Background */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full pointer-events-none -z-10">
+          <div className="absolute top-20 left-1/4 w-[500px] h-[500px] bg-violet-600/10 rounded-full blur-[140px]"></div>
+          <div className="absolute bottom-20 right-1/4 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[140px]"></div>
+        </div>
+
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-16 md:gap-24">
+          <div className="flex-1 space-y-10 text-center md:text-left">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-violet-500/5 border border-violet-500/20 text-violet-300 text-[10px] font-black uppercase tracking-[0.2em]">
+              <Sparkles size={12} className="animate-pulse" /> Available for AI Engineering
             </div>
             
-            <h1 className="text-5xl md:text-7xl font-bold leading-[1.1] tracking-tight">
-              Hi, this is <span className="gradient-text">Ephraim!</span>
+            <h1 className="text-6xl md:text-8xl lg:text-9xl font-black leading-[0.85] tracking-tighter">
+              Hi, I'm <br/><span className="gradient-text">Ephraim.</span>
             </h1>
             
-            <p className="text-xl text-gray-400 max-w-xl mx-auto md:mx-0 leading-relaxed font-light">
-              I'm an <span className="text-white font-medium">AI Engineer</span>. I help people build smart, friendly software that uses data to solve real problems.
+            <p className="text-xl md:text-2xl text-gray-400 max-w-xl mx-auto md:mx-0 leading-relaxed font-light">
+              I build <span className="text-white font-medium">intelligent systems</span> that transform raw data into high-impact business products.
             </p>
 
-            <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 pt-4">
-              <a href="#contact" className="bg-violet-600 text-white px-8 py-3.5 rounded-full font-bold hover:bg-violet-500 hover:scale-105 transition-all flex items-center gap-2 shadow-xl shadow-violet-600/20">
-                Contact Me <Mail size={18} />
+            <div className="flex flex-wrap items-center justify-center md:justify-start gap-6 pt-6">
+              <a href="#contact" className="bg-white text-black px-10 py-4.5 rounded-full font-bold hover:bg-violet-600 hover:text-white transition-all flex items-center gap-3 shadow-2xl shadow-white/5 text-lg">
+                Get In Touch <Mail size={20} />
               </a>
-              <div className="flex items-center gap-6 px-4">
-                <a href="https://github.com/ephraimemad" target="_blank" className="text-gray-500 hover:text-violet-400 transition-colors">
-                  <Github size={24} />
+              <div className="flex items-center gap-8 px-4">
+                <a href="https://github.com/ephraimemad" target="_blank" className="text-gray-500 hover:text-white transition-all hover:scale-110">
+                  <Github size={28} />
                 </a>
-                <a href="https://linkedin.com/in/ephraimemad" target="_blank" className="text-gray-500 hover:text-violet-400 transition-colors">
-                  <Linkedin size={24} />
+                <a href="https://linkedin.com/in/ephraimemad" target="_blank" className="text-gray-500 hover:text-white transition-all hover:scale-110">
+                  <Linkedin size={28} />
                 </a>
               </div>
             </div>
           </div>
           
-          <div className="relative w-48 h-48 md:w-64 md:h-64 flex-shrink-0 order-first md:order-last">
-            <div className="absolute inset-0 bg-violet-500 blur-[60px] opacity-20"></div>
-            <div className="profile-frame w-full h-full">
+          <div className="relative w-72 h-72 md:w-[440px] md:h-[440px] flex-shrink-0 order-first md:order-last">
+            <div className="profile-frame w-full h-full accent-glow">
               <img 
-                src="profile.jpg"
-                alt="Ephraim Emad"
-                className="w-full h-full object-cover rounded-full"
+                src="./profile.jpg" 
+                alt="Ephraim Emad" 
+                className="w-full h-full object-cover rounded-full border-[6px] border-[#050505]"
                 onError={(e) => {
-                  (e.target as HTMLImageElement).src = 'https://ui-avatars.com/api/?name=Ephraim+Emad&background=8b5cf6&color=fff&size=512';
+                  (e.target as HTMLImageElement).src = 'https://ui-avatars.com/api/?name=Ephraim+Emad&background=8b5cf6&color=fff&size=800';
                 }}
               />
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* About Summary */}
-      <section id="about" className="py-24 px-6 bg-zinc-950/30">
-        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6 text-gray-400 text-lg leading-relaxed">
-            <h2 className="text-3xl font-bold text-white">Making AI easy for everyone.</h2>
-            <p>
-              I specialize in building Machine Learning systems that aren't just powerful, but practical. I believe technology should disappear into the background while it solves your biggest bottlenecks.
-            </p>
-            <p>
-              I work with startups to turn complex data into features that users love. Whether it's automation, chat systems, or custom models—I'm here to help.
-            </p>
-          </div>
-          <div className="p-8 bg-zinc-900/50 rounded-3xl border border-white/5 accent-glow">
-            <h3 className="text-violet-400 text-xs font-bold uppercase tracking-widest mb-6">Expertise</h3>
-            <div className="flex flex-wrap gap-2">
-              {['Python', 'PyTorch', 'FastAPI', 'LLMs', 'NLP', 'Computer Vision', 'React', 'Data Strategy'].map(tech => (
-                <span key={tech} className="px-3 py-1.5 bg-violet-500/5 text-xs font-semibold text-violet-200 rounded-lg border border-violet-500/10 transition-colors">{tech}</span>
-              ))}
+            {/* Status Floating Card */}
+            <div className="absolute -bottom-6 -left-6 bg-zinc-950/90 border border-white/10 backdrop-blur-xl p-5 rounded-3xl shadow-2xl hidden md:flex items-center gap-4 animate-in slide-in-from-left duration-1000">
+              <div className="p-3 bg-violet-500/10 rounded-2xl text-violet-400">
+                <Cpu size={24} />
+              </div>
+              <div>
+                <div className="text-[10px] font-black uppercase tracking-widest text-gray-500">Core Focus</div>
+                <div className="text-sm font-bold">Deep Learning & NLP</div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-24 px-6 border-t border-white/5">
-        <div className="max-w-5xl mx-auto">
+      <section id="services" className="py-32 px-6 border-t border-white/5">
+        <div className="max-w-6xl mx-auto">
           <SectionHeader 
-            title="How I can help" 
-            subtitle="Tailored AI solutions to help you scale and simplify." 
+            title="Specialized Services" 
+            subtitle="I provide technical leadership and implementation for AI-driven transformation." 
           />
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 pt-16">
             {SERVICES.map(service => (
-              <div key={service.id} className="p-8 border border-white/5 rounded-3xl bg-zinc-950 hover:bg-zinc-900 transition-all group hover:border-violet-500/30">
-                <h3 className="text-lg font-bold mb-3 group-hover:text-violet-300 transition-colors">{service.title}</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">{service.description}</p>
+              <div key={service.id} className="p-10 border border-white/5 rounded-[2.5rem] bg-zinc-950/40 hover:bg-zinc-900 transition-all group hover:border-violet-500/30">
+                <div className="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center text-gray-400 mb-8 group-hover:text-violet-400 group-hover:bg-violet-500/10 transition-all">
+                  <Terminal size={24} />
+                </div>
+                <h3 className="text-xl font-bold mb-4 tracking-tight group-hover:text-violet-200 transition-colors">{service.title}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed font-light">{service.description}</p>
               </div>
             ))}
           </div>
@@ -112,25 +107,31 @@ const App: React.FC = () => {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-24 px-6 bg-zinc-950/30">
-        <div className="max-w-5xl mx-auto">
+      <section id="projects" className="py-32 px-6 bg-zinc-950/20 border-t border-white/5">
+        <div className="max-w-6xl mx-auto">
           <SectionHeader 
-            title="Recent Work" 
-            subtitle="Real systems built for real problems."
+            title="Technical Case Studies" 
+            subtitle="Proof-of-concepts and production systems built to solve complex data hurdles."
           />
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-10 pt-20">
             {PROJECTS.map((project) => (
-              <div key={project.id} className="p-8 border border-white/5 rounded-[2rem] bg-black hover:border-violet-500/20 transition-all group flex flex-col justify-between">
-                <div className="space-y-4">
-                  <h3 className="text-xl font-bold group-hover:text-violet-300 transition-colors">{project.title}</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tools.slice(0, 3).map(tool => (
-                      <span key={tool} className="text-[10px] font-bold text-violet-300/70 uppercase tracking-wider bg-violet-500/5 px-2.5 py-1 rounded-full border border-violet-500/10">{tool}</span>
-                    ))}
+              <div key={project.id} className="group relative p-10 border border-white/5 rounded-[3rem] bg-black hover:bg-zinc-900/50 transition-all flex flex-col justify-between overflow-hidden">
+                <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-100 transition-opacity">
+                  <Code2 size={48} className="text-violet-500" />
+                </div>
+                <div className="space-y-8 relative z-10">
+                  <div className="space-y-2">
+                    <h3 className="text-2xl font-bold tracking-tight">{project.title}</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {project.tools.slice(0, 3).map(tool => (
+                        <span key={tool} className="text-[10px] font-black text-gray-400 uppercase tracking-widest bg-white/5 px-3 py-1.5 rounded-full border border-white/5">{tool}</span>
+                      ))}
+                    </div>
                   </div>
-                  <p className="text-gray-400 text-sm leading-relaxed">{project.problem}</p>
-                  <div className="p-4 bg-zinc-950 rounded-2xl border border-violet-500/5 text-xs text-gray-300 italic">
-                    <span className="text-violet-400 font-bold not-italic mr-1">Result:</span> {project.value}
+                  <p className="text-gray-400 text-sm leading-relaxed font-light line-clamp-3">{project.problem}</p>
+                  <div className="pt-6 border-t border-white/5">
+                    <div className="text-[11px] text-violet-400 font-black uppercase tracking-[0.2em] mb-2">Measurable ROI</div>
+                    <p className="text-sm text-gray-300 font-medium italic">"{project.value}"</p>
                   </div>
                 </div>
               </div>
@@ -139,46 +140,47 @@ const App: React.FC = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section id="contact" className="py-32 px-6">
-        <div className="max-w-3xl mx-auto text-center space-y-12">
-          <div className="space-y-4">
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Let's chat!</h2>
-            <p className="text-lg text-gray-400">
-              Have a question or a project? Drop a line below or email me directly at <a href={`mailto:${email}`} className="text-violet-400 font-bold hover:underline underline-offset-4">{email}</a>
+      {/* Contact Section */}
+      <section id="contact" className="py-32 px-6 border-t border-white/5">
+        <div className="max-w-4xl mx-auto text-center space-y-20">
+          <div className="space-y-6">
+            <h2 className="text-5xl md:text-7xl font-black tracking-tighter">Let's build.</h2>
+            <p className="text-xl text-gray-500 font-light">
+              Ready to integrate AI into your workflow? Reach out at <br/>
+              <a href={`mailto:${email}`} className="text-white font-bold hover:text-violet-400 transition-all underline decoration-violet-500/30 underline-offset-8 decoration-2">{email}</a>
             </p>
           </div>
           
           <ContactForm email={email} />
           
-          <div className="pt-20 border-t border-white/5 text-left grid md:grid-cols-3 gap-8">
-            <div className="space-y-3 text-center md:text-left">
-              <Layout size={20} className="text-violet-400 mx-auto md:mx-0" />
-              <h4 className="font-bold text-xs uppercase tracking-widest text-gray-200">Scale Up</h4>
-              <p className="text-xs text-gray-500">Built to grow from MVP to production.</p>
+          <div className="pt-24 border-t border-white/5 grid md:grid-cols-3 gap-16 text-left">
+            <div className="space-y-4">
+              <Layout size={24} className="text-violet-500" />
+              <h4 className="font-black text-[11px] uppercase tracking-widest text-gray-300">Scalable Systems</h4>
+              <p className="text-[13px] text-gray-500 leading-relaxed font-light">I architect solutions that grow from experimental MVPs to robust enterprise architectures.</p>
             </div>
-            <div className="space-y-3 text-center md:text-left">
-              <Terminal size={20} className="text-violet-400 mx-auto md:mx-0" />
-              <h4 className="font-bold text-xs uppercase tracking-widest text-gray-200">Clean Code</h4>
-              <p className="text-xs text-gray-500">Reliable, documented, and maintainable tech.</p>
+            <div className="space-y-4">
+              <Terminal size={24} className="text-violet-500" />
+              <h4 className="font-black text-[11px] uppercase tracking-widest text-gray-300">Clean Implementation</h4>
+              <p className="text-[13px] text-gray-500 leading-relaxed font-light">Production-ready code that is modular, documented, and easy for your team to maintain.</p>
             </div>
-            <div className="space-y-3 text-center md:text-left">
-              <MessageSquare size={20} className="text-violet-400 mx-auto md:mx-0" />
-              <h4 className="font-bold text-xs uppercase tracking-widest text-gray-200">Partner</h4>
-              <p className="text-xs text-gray-500">I help you find real value, not just follow trends.</p>
+            <div className="space-y-4">
+              <Cpu size={24} className="text-violet-500" />
+              <h4 className="font-black text-[11px] uppercase tracking-widest text-gray-300">Strategic AI</h4>
+              <p className="text-[13px] text-gray-500 leading-relaxed font-light">I focus on real-world utility and business value, cutting through the generative AI hype.</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-6 border-t border-white/5 bg-black">
-        <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-gray-500 text-sm">
+      <footer className="py-20 px-6 border-t border-white/5 bg-black">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10 text-gray-600 text-[11px] font-black uppercase tracking-[0.3em]">
           <p>© 2024 Ephraim Emad.</p>
-          <div className="flex gap-8 font-semibold">
-            <a href="https://github.com/ephraimemad" className="hover:text-violet-400 transition-colors">GitHub</a>
-            <a href="https://linkedin.com/in/ephraimemad" className="hover:text-violet-400 transition-colors">LinkedIn</a>
-            <a href={`mailto:${email}`} className="hover:text-violet-400 transition-colors">Email</a>
+          <div className="flex gap-12">
+            <a href="https://github.com/ephraimemad" className="hover:text-white transition-colors">GitHub</a>
+            <a href="https://linkedin.com/in/ephraimemad" className="hover:text-white transition-colors">LinkedIn</a>
+            <a href={`mailto:${email}`} className="hover:text-white transition-colors">Email</a>
           </div>
         </div>
       </footer>
